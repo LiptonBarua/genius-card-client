@@ -42,7 +42,7 @@ const Orders = () => {
       body: JSON.stringify({status: 'Approved'})
     })
     .then(res=>res.json())
-    .data(data=>{
+    .then(data=>{
       console.log(data)
     if(data.modifiedCount>0){
       const remaining = orders.filter(ods=>ods._id!==id);
