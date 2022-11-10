@@ -3,16 +3,26 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 const Header = () => {
-const{user} =useContext(AuthContext);
+const{user, logOut} =useContext(AuthContext);
+
+const handleLogOut =()=>{
+  logOut()
+  .then()
+  .catch()
+}
+
+
   const manuItems =<>
       <li><Link className='font-extrabold' to='/'>Home</Link></li>
       {
         user?.email?
-        <div>
-          <li><Link className='font-extrabold' to='/orders'>Orders</Link></li>
-        </div>
+        <>
+          <li className='font-extrabold'><Link to='/orders'>Orders</Link></li>
+          <Link onClick={handleLogOut} className='font-extrabold'><button className="btn-ghost">Sign Out</button></Link>
+        </>
         :
         <li><Link className='font-extrabold' to='/login'>Login</Link></li>
+        
       }
   </>
     return (

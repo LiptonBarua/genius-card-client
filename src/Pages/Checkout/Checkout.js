@@ -32,7 +32,7 @@ const Checkout = () => {
         fetch('https://genius-car-server-vert.vercel.app/orders',{
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'content-Type': 'application/json',
             },
             body: JSON.stringify(order)
         })

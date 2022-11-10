@@ -45,7 +45,7 @@ const OrderRow = ({order,handleDelete, handleUpdateStatus}) => {
         </td>
         <td>Purple</td>
         <th>
-          <button onClick={()=>handleUpdateStatus(_id)} className="btn btn-ghost btn-xs">{status? status: 'pending'}</button>
+          <button  className="btn btn-ghost btn-xs">{status? status: 'pending'}</button>
         </th>
       </tr>
     );

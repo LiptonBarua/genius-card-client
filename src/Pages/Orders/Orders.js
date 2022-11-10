@@ -9,7 +9,11 @@ const Orders = () => {
     
     useEffect(()=>{
     if(user?.email){
-        fetch(`https://genius-car-server-vert.vercel.app/orders?email=${user?.email}`)
+        fetch(`https://genius-car-server-vert.vercel.app/orders?email=${user?.email}`,{
+          headers:{
+            authorization: `Bearer ${localStorage.getItem('genius-token')}`
+          }
+        })
         .then(res=>res.json())
         .then(data=>setOrders(data))
     }
